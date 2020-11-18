@@ -1,0 +1,29 @@
+
+
+<!--this page is for you to see the picture before edit-->
+<div class="sidenav">
+  <a  routerLink="/pool"><span class="glyphicon glyphicon-chevron-left"></span>Back</a>
+  <button type="button" class="btn btn-success">
+    <a routerLink="/edit" (click) = "edit()"><span class="glyphicon glyphicon-edit"></span>Start Edit</a>
+  </button>
+
+  <button type="button" *ngIf="ImagesInfo.cloudImg" class="btn btn-danger">
+    <a routerLink="/edit"  (click) = "delete()"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+  </button>
+  <p *ngIf="ImagesInfo.cloudImg">Share to:</p><a class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ImagesInfo.cloudImg}}">
+    <img src="https://image.flaticon.com/icons/svg/124/124010.svg" class="fbIcon"></a>
+  <!--<a routerLink="/pool" class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="http://service.weibo.com/share/share.php?pic={{ImagesInfo.cloudImg}}">-->
+    <a  class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="http://service.weibo.com/share/share.php?pic={{ImagesInfo.cloudImg}}">
+    <img src="https://common.cnblogs.com/images/icon_weibo_24.png"></a>
+</div>
+
+
+<!--  routerLink="/edit"  -->
+
+<div class="container">
+  <div class="row">
+        <img  class="picBox" src="{{ImagesInfo?.localImg||ImagesInfo?.cloudImg}}">
+  </div>
+  </div>
+
+

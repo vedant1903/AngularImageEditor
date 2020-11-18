@@ -1,0 +1,39 @@
+.jumbotron, {
+  background-color: black;
+  font-size: 25px;
+  color: lightgrey;
+  padding: 5px;
+
+}
+#next{
+  button{
+     margin: 3px 3px;
+     color: white;
+     font-size: 18px;
+    padding: 4px;
+   }
+}
+.container {
+    font-size: 18px;
+    color: lightgrey;
+}
+a{
+  color:black;
+  font-size: 18px;
+}
+button{
+  margin: 0px 3px;
+  border-radius: 5px;
+  color: dimgray;
+}
+input{
+  border-radius: 5px;
+  color: black;
+}
+input:focus:invalid{ //if the input is not Email
+  border: 1px solid red;
+}
+.download{
+  background-color:dimgray;
+  padding: 5px;
+}

@@ -1,0 +1,56 @@
+<!--Page to submit your image(upload to server or download or send email)-->
+<header class="jumbotron">
+  <div id="header" class="container">
+
+    <!-- The operations you can make -->
+    <div id="next" >
+      <strong>You can:</strong>
+      <button class="btn download" (click)="download()"><span class="glyphicon glyphicon-download-alt"></span>Download</button>
+
+      <button class="btn btn-success" *ngIf="imagesInfo.cloudImg" (click)="saveold()"><span class="glyphicon glyphicon-cloud-upload"></span>Update Existing Online Picture</button>
+      <button class="btn btn-success" (click)="savenew()"><span class="glyphicon glyphicon-cloud-upload"></span>Save New Online Picture </button>
+    </div>
+
+    <br>
+
+    <!-- to send your work via Email  -->
+     Send Your Picture Via <strong>Email</strong>
+    <div class="row">
+      <div class="col-xs-12">
+        To: <input type="email" required [(ngModel)]="mails.To" placeholder="To" />
+        Subject: <input type="text" [(ngModel)]="mails.title" placeholder="Title" />
+
+        <button id="send" (click)="send()">
+          <span class="glyphicon glyphicon-envelope"></span> Send
+        </button>
+
+      </div>
+
+  </div>
+  </div>
+</header>
+
+
+
+<div class="container">
+  <div class="row justify-content-between">
+    <!-- back to last step   -->
+    <div class="col-xs-4 text-left">
+      <button routerLink="/reEdit"><span class="glyphicon glyphicon-chevron-left"></span>Back</button>
+    </div>
+    <!--  display the size of picture  -->
+    <div class="col-xs-4"><span>Width:{{width}}px</span> x <span>Height:{{height}}px</span></div>
+  </div>
+</div>
+
+
+<!-- to display the picture on canvas-->
+<div class="container">
+  <div class="row">
+    <div class="thumbnail">
+
+      <img class="img-responsive" [src]="canvasImg">
+
+    </div>
+  </div>
+</div>

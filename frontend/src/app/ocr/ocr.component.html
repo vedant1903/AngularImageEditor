@@ -1,0 +1,38 @@
+<div class="background">
+  <div class="container">
+    <div class="row uFile">
+        <input
+          #image
+          id="imageInput"
+          class="inputfile"
+          type="file"
+          accept="image/*"
+          (change)="fileChangeEvent($event)"
+        />
+        <div class="label-div">
+          <label for="imageInput" class="customize-file">Select your input</label>
+        </div>
+        
+    </div>
+    <div class="row">
+      <div class="col preview-box">
+        <img class="orcimg" src="{{ previewImageData }}" />
+      </div>
+      <!-- *ngIf="submmited == true" -->
+      <div class="col textDiv">
+        <textarea
+          id="txt"
+          [(ngModel)]="textAreaValue"
+          cols="70"
+          rows="20"
+          value="{{ textAreaValue }}"
+        >
+        </textarea>
+      </div>
+    </div>
+    <div class="row submitDiv">
+      <button class="ocrbtn" (click)="submit()">Submit Data</button>
+      <button class="ocrbtn" (click)="clear()">Clear</button>
+    </div>
+  </div>
+</div>

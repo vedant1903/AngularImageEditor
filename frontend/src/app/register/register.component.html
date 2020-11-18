@@ -1,0 +1,37 @@
+<!--this page is for register-->
+<div class="background">
+  <div class="container">
+    <br>
+    <div class="row">
+        <h1 style="text-align: center">Sign Up</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/register" method="post">
+              <div class="form-group">
+                  <input class="form-control" name="email" required name="account" placeholder="Enter e-mail"
+                  [(ngModel)]="account">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="text" required name="userName" placeholder="Username"
+                  [(ngModel)]="user.userName">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="password" required name="password" placeholder="Password"
+                  [(ngModel)]="password">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="password" required name="password" placeholder="Password"
+                  [(ngModel)]="rePassword">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="tel" name="phoneNumber" placeholder="Phone Number"
+                  [(ngModel)]="user.phoneNumber">
+              </div>
+              <div class="form-group">
+                    <button class="b" (click) = "register()">Sign Up!</button>
+              </div>
+            </form>
+            <a class="k" routerLink="/">Go Back</a>
+        </div>
+    </div>
+  </div>
+</div>

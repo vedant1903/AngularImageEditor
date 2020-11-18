@@ -1,0 +1,41 @@
+<!--login page-->
+<div class="background">
+<div class="container">
+  <br>
+  <div class="row">
+      <h1 class="h1">Login</h1>
+      <div style="width: 30%; margin: 25px auto;">
+          <form>
+            <!--  Div class for E-mail -->
+              <div class="form-group">
+                <input [(ngModel)]="user.account" class="form-control" type="email" required name="account" placeholder="Enter E-mail"
+                  required minlength="5" maxlength="40" />
+              </div>
+
+              <!-- Div class for password -->
+              <div class="form-group">
+                <input [(ngModel)]="user.password" class="form-control" type="password" required name="password" placeholder="Password">
+              </div>
+
+
+              <!-- Div class for Login Button -->
+              <div class="form-group">
+                <button class="loginButton" (click)="UsersLogin()">Login</button>
+              </div>
+
+
+
+              <!-- Div class for OTP Login Button -->
+              <div class="form-group">
+                <button class="otpButton" [routerLink]="['/opt']">Login using OTP</button>
+              </div>
+
+              <div class="form-group">
+                <button class="b" [routerLink]="['/reset']">Forgot Password</button>
+              </div>
+
+            </form>
+      </div>
+     </div>
+    </div>
+</div>

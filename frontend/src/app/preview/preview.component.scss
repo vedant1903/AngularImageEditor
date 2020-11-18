@@ -1,0 +1,88 @@
+
+span{
+  font-size: 15px;
+  color: darkgrey;
+}
+.fbIcon{
+  height: 20px;
+  width: auto;
+}
+.sidenav {
+  height: 80px;
+  width: 100%; /* Set the width of the sidebar */
+  position: sticky;
+  top:53px;
+  z-index: 1; /* Stay on top */
+  background-color: #111; /* Black */
+  a {
+    float: left;
+    font-size: 20px;
+    color: lightgrey;
+    display: block;
+    margin: 10px;
+  }
+  .btn{
+    float: left;
+    margin: 20px 5px;
+  }
+  p{
+    float: left;
+    font-size: 15px;
+    color: lightgrey;
+    padding: 15px;
+    padding-right: 5px;
+    padding-left: 100px;
+  }
+  .icon{
+    margin: 10px 3px;
+  }
+}
+
+
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* On smaller screens, where height is less than 450px, change the style (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.container{
+}
+
+.a123{
+  font-size: 25px;
+  color: #818181;
+}
+
+
+// Glyphicons
+.glyphicon.glyphicon-camera {
+  font-size: 30px;
+}
+
+
+.glyphicon{
+  font-size: 20px;
+}
+
+.picBox{
+  margin-top: 50px;
+  max-height: 680px;
+}
+.btn{
+  margin: 10px 5px;
+}
+.btn a{
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
+  color: white;
+}
+.glyphicon{
+  color: white;
+}

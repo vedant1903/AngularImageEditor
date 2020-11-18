@@ -1,0 +1,56 @@
+<!-- ng-template for modal -->
+<ng-template #template>
+  <div class="modal-header header">
+    <h4 class="modal-title pull-left"><b>Preview</b></h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+  <div class="modal-body background">
+    <p *ngIf="ImagesInfo.cloudImg">Share to:<a class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ImagesInfo.cloudImg}}">
+      <img src="https://image.flaticon.com/icons/svg/124/124010.svg" class="fbIcon"></a>
+      <a  class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="http://service.weibo.com/share/share.php?pic={{ImagesInfo.cloudImg}}">
+      <!--<a routerLink="/pool" class='icon' *ngIf="ImagesInfo.cloudImg" target="_blank" href="http://service.weibo.com/share/share.php?pic={{ImagesInfo.cloudImg}}">-->
+        <img src="https://common.cnblogs.com/images/icon_weibo_24.png"></a></p>
+    <div class="row background">
+      <img  class="modalBox" src="{{ImagesInfo?.localImg||ImagesInfo?.cloudImg}}" >
+    </div>
+    <div class="sidenav">
+      <button type="button" class="btn btn-success margin1" >
+        <a routerLink="/edit" (click) = "edit();modalRef.hide()"><span class="glyphicon glyphicon-edit"></span>Start Edit</a>
+      </button>
+      <button type="button" class="btn btn-primary margin3" >
+        <a routerLink="/preview" (click)="preview($event);modalRef.hide()"><span class="glyphicon glyphicon-fullscreen"></span></a>
+      </button>
+      <button type="button" *ngIf="ImagesInfo.cloudImg" class="btn-danger btn margin2" >
+        <a  (click) = "delete();modalRef.hide()"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+
+<!-- div class for each photo -->
+<div class="pool_container">
+  <div class="thumbnail"  *ngFor="let pic of imageList">
+    <img class="img" id="1111" (click)="open(template,$event)"
+         src="{{pic}}"
+    />
+
+  </div>
+
+</div>
+
+
+<footer class="footer">
+  <div>
+      <a href="https://github.com/neu-mis-info6150-spring-2020/final-project-quarantine-squad">
+        <img src="../assets//githubgray.png" class="footerIcon">
+        <!--<img src="../assets//twitter.png" class="footerIcon">
+        <img src="../assets//facebook-2-512.png" class="footerIcon">-->
+      </a>
+  </div>>
+</footer>
+

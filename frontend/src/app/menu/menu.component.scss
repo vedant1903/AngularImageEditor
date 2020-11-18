@@ -1,0 +1,48 @@
+%addImage {
+  width: 200px;
+  float: left;
+  text-align: center;
+  color: #ffffff;
+}
+
+#img_input2 {
+  display: none;
+  @extend %addImage;
+}
+
+.nav{
+  margin-bottom: 0px;
+  position: sticky;
+  top:0px;
+  z-index: 9;
+}
+
+.img_label2 {
+  float: left;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 8px;
+  margin-top :5px;
+  margin-left: 15px;
+}
+
+.title{
+  font-size: 36px;
+  font-weight: bold;
+  color:white;
+}
+
+li:hover{
+  background-color: #ff6a00;
+}
+span:hover{
+  cursor: pointer;
+}
+#login{
+  background-color: #222222;
+}
+#login:hover{
+  background-color: #ff6a00;
+}

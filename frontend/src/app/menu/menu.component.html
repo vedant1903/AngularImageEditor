@@ -1,0 +1,41 @@
+
+<!--navigation part which will go through all the page on the top of the page-->
+<nav class="navbar navbar-default navbar-inverse nav-tabs nav" >
+  <div class="container">
+    <div class="navbar-header">
+
+      <span class="title" (click)="firstPage()">
+        PicEdit+
+      </span>
+    </div>
+<!--    login and register link on the right,after you login it will show your id name and logout function-->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="status!=='Login'">
+          <input #userPhoto id="img_input2" type="file" accept="image/*" (change)="fileChangeEvent($event)" />
+          <label for="img_input2" class="img_label2 enlarge"><span class="glyphicon glyphicon-open"></span><span>Add Your
+            Picture</span>
+          </label>
+        </li>
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <!-- display the "username" if login else display "Login"-->
+          <a *ngIf="status!=='Login'">{{status}}</a>
+
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a id="login" *ngIf="status==='Login'" routerLink="login">Login</a>
+          <a *ngIf="status!=='Login'"routerLink="register" (click)="logOut()">Logout</a>
+        </li>
+        <li>
+          <a *ngIf="status==='Login'" routerLink="register">Register</a>
+        </li>
+        <li><a [routerLink]="['/ocr']">OCR</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container"></div>

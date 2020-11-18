@@ -1,0 +1,116 @@
+
+
+// Side NavBar
+.sidenav {
+  height: 80px;
+  width: 100%; /* Set the width of the sidebar */
+  position: sticky; //stick to the top
+  top:53px;
+  z-index: 1; /* Stay on top */
+  background-color: #111; /* Black */
+  overflow-x: hidden;
+  a {
+    float: left; //float form left
+    font-size: 20px;
+    color: lightgrey;
+    display: block;
+    margin: 10px;
+  }
+  div {
+    float: left;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    margin: 0px 5px;
+  }
+  span{
+    color: white;
+    font-size: 16px;
+  }
+  .btn{
+    float: left;
+     margin: 0px 5px;
+   }
+  .btn a{
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+    color: white;
+  }
+}
+.btn-primary{ //tool bar buttons
+  background-color:darkblue;
+  border-color: white;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.container{
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+.a123{
+  font-size: 25px;
+  color: #818181;
+}
+
+
+.glyphicon{ //the icons of glyphicon
+  font-size: 20px;
+}
+
+//below are for edit zone:
+
+.editZone{
+  max-width: 1300px;
+  max-height: 800px;
+  margin: 20px auto;
+  span{
+    font-size: 15px;
+  }
+}
+
+.crop-res img {
+  max-width: 100%;
+}
+.btn-group, .btn-group-vertical {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.docs-buttons > .btn, .docs-buttons > .btn-group, .docs-buttons > .form-control {
+  margin-bottom: .5rem;
+  margin-right: .25rem;
+}
+
+/*** animation preloader ***/
+.container-preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  background: #FF2CBD;
+  box-shadow: 0 0 10px 0 #FECDFF;
+}
+

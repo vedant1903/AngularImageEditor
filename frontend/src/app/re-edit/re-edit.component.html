@@ -1,0 +1,55 @@
+<!--the second edit page use "Canvas" to manipulate the pixels-->
+
+<div class="sidenav">
+  <!-- back first edit page preview  -->
+  <a class="back" routerLink="/edit"><span class="glyphicon glyphicon-chevron-left"></span>Back</a>
+
+  <!-- clear all the effects and back to initial picture -->
+  <a (click)="clearAll()"><span class="glyphicon glyphicon-ban-circle"></span>Clean All Effect</a>
+
+  <!-- this part control the opacity -->
+  <div class="opacity"><span class="glyphicon glyphicon-eye-close"></span>Opacity
+    <input class="rangeMain" type="range" [(ngModel)]="opacitynum" min="0" max="100" step="1" value="100"
+           (input)="opacity()">
+  </div>
+
+  <!-- list all the pixel manipulation effects and their functions-->
+  <a (click)="hue_rotate()">Hue-rotate</a>
+  <a (click)="grayscale()">Grayscale</a>
+  <a (click)="addBright()">Bright+</a>
+  <a (click)="reduceBright()">Bright-</a>
+  <a (click)="Redlight()"><span id="red">+R</span></a>
+  <a (click)="Greenlight()"><span id="green">+G</span></a>
+  <a (click)="Bluelight()"><span id="blue">+B</span></a>
+  <a (click)="Reverse()">Reverse</a>
+
+  <!-- this part add the text at left top of the picture -->
+  <div class="addText">
+    <button type="button" class="btn btn-default dropdown-toggle" (click)="addText()">AddText </button>
+    <input type="text" [(ngModel)]="text">
+  </div>
+  <!-- go to the submit page -->
+  <button type="button" class="btn btn-success">
+    <a (click)="goToConfirm()"><span class="glyphicon glyphicon-ok"></span>Submit</a>
+  </button>
+  <!-- discard editing and back to preview-->
+  <button type="button" class="btn btn-danger">
+    <a routerLink="/preview"><span class="glyphicon glyphicon-remove"></span>Discard Editing</a>
+  </button>
+
+</div>
+
+<!--this is the main canvas that we manipulated-->
+<div class="img">
+  <div><img class="newImage" [ngStyle]="{'filter': 'grayscale(100%)'}"></div>
+  <div class="text-center"><canvas class="newCanvas" [width]="width" [height]="height"></canvas></div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!--the first edit page using cropperjs -->
+
+<div class="sidenav">
+  <!-- back to preview  -->
+  <a  routerLink="/preview"><span class="glyphicon glyphicon-chevron-left"></span>Back</a>
+  <br>
+
+  <!--  go to next edit step-->
+  <button type="button" class="btn btn-success">
+    <a routerLink="/edit" (click)="goToReEdit()"><span class="glyphicon glyphicon-ok"></span>Continue With SelectedArea </a>
+  </button>
+
+  <!-- stop editing and back to preview -->
+  <button type="button" class="btn btn-danger">
+    <a routerLink="/preview"><span class="glyphicon glyphicon-remove"></span>Discard Editing</a>
+  </button>
+
+  <!-- disply the size of the selected area in cropper -->
+  <div>Selected Size: <span>Width:{{width}}px</span> x <span>Height:{{height}}px</span></div>
+
+</div>
+
+<!--this part is the cropper edit interface-->
+<div class="editZone">
+  <div class="row" *ngIf="imageUrl" id="actions">
+    <div class="col-sm-12">
+      <div class="docs-buttons">
+
+        <div class="btn-group">
+          <button (click)="zoom('positive')" type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+          <button (click)="zoom('negative')" type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </div>
+
+        <div class="btn-group">
+          <button (click)="move(-10, 0)" type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+          </button>
+          <button (click)="move(10, 0)" type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0" title="Move Right">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+          <button (click)="move(0, -10)" type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
+            <span class="glyphicon glyphicon-arrow-up"></span>
+          </button>
+          <button (click)="move(0, 10)" type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="10" title="Move Down">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+          </button>
+        </div>
+
+        <div class="btn-group">
+          <button (click)="rotate('left')" type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
+            rotate left
+          </button>
+          <button (click)="rotate('right')" type="button" class="btn btn-primary" data-method="rotate" data-option="45" title="Rotate Right">
+            rotate right
+          </button>
+        </div>
+
+        <div class="btn-group">
+          <button (click)="scale('x')" type="button" class="btn btn-primary" data-method="scaleX" data-option="-1" title="Flip Horizontal">
+            reverse<span class="glyphicon glyphicon-resize-vertical"></span>
+          </button>
+          <button (click)="scale('y')" type="button" class="btn btn-primary" data-method="scaleY" data-option="-1" title="Flip Vertical">
+            reverse<span class="glyphicon glyphicon-resize-horizontal"></span>
+          </button>
+        </div>
+
+        <div class="btn-group">
+          <button (click)="clear()" type="button" class="btn btn-primary" data-method="clear" title="Clear">
+            clear
+          </button>
+        </div>
+
+        <!--   reset the selected zone   -->
+        <div class="btn-group">
+          <button (click)="reset()" type="button" class="btn btn-primary" data-method="reset" title="Reset">
+            reset
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+    <!--  dispaly the main cropper edit zone    -->
+      <angular-cropper #angularCropper *ngIf="imageUrl"
+                       [cropperOptions]="cropperConfig"
+                       [imageUrl]="imageUrl"
+                       (zoom)="zoomManual()"
+                       (ready)="readyImage($event)"
+                       (cropend)="cropendImage($event)">
+      </angular-cropper>
+    </div>
+    <!--  display the mini view of the selected area-->
+    <div class="col-xs-12 col-sm-3 crop-res">
+      <img *ngIf="cropperRes || imageUrl" [src]="cropperRes || imageUrl">
+    </div>
+  </div>
+
+</div>
+
+

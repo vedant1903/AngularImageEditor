@@ -1,0 +1,30 @@
+.b{
+  background-color: red;
+  color: white;
+  width: 350px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+.b:hover{
+  background-color:brown;
+}
+input{
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+input:focus:invalid{ //if the input is not Email
+  border: 1px solid red;
+}
+.k{
+  color: black;
+  text-align: center;
+  margin-left : 150px;
+  font-size : 12px;
+}
+.background{
+  background-image:url('../../assets/03996_hakonesunset_3840x2160.jpg');
+  width: 100%;
+  height: 100%;
+}

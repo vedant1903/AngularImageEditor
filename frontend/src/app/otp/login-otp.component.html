@@ -1,0 +1,45 @@
+<!--login page-->
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <h1 class="h1">Send OTP</h1>
+      <div style="width: 30%; margin: 25px auto;">
+        <form>
+          <!--  Div class for username -->
+          <div class="form-group">
+            <input
+              [(ngModel)]="username"
+              class="form-control"
+              type="text"
+              name="username"
+              placeholder="Enter your username"
+              required
+              minlength="5"
+              maxlength="40"
+            />
+          </div>
+          <button class="reset" width="160" height="35" (click)="sendCode()">
+            Send Code
+          </button>
+        </form>
+        <div *ngIf="codeSent">
+          <form>
+            <input
+              [(ngModel)]="enteredCode"
+              class="form-control"
+              type="text"
+              name="enteredCode"
+              placeholder="Enter the passcode"
+              required
+              minlength="4"
+              maxlength="4"
+            />
+            <button class="reset" width="160" height="35" (click)="login()">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
